@@ -1,5 +1,6 @@
 import { useEffect, useContext } from "react";
 import MoviesContext from "../context/MoviesContext";
+import { NavLink } from "react-router-dom";
 
 const MoviesPage = () => {
   const { movies, obtenerPeliculasAction } = useContext(MoviesContext);
@@ -28,7 +29,12 @@ const MoviesPage = () => {
                 <h5 className="card-title">{movie.title}</h5>
                 <p className="card-text">{movie.popularity}</p>
                 <div className="d-grid">
-                  <button className="btn btn-secondary">Ver mas...</button>
+                  <NavLink
+                    className="btn btn-secondary"
+                    to={`/movies/${movie.id}`}
+                  >
+                    Ver mas...
+                  </NavLink>
                 </div>
               </div>
             </div>

@@ -6,6 +6,12 @@ const MoviesReducer = (globalState, action) => {
         movies: action.payload,
       };
 
+    case "OBTENER_PELICULA":
+      return {
+        ...globalState,
+        movie: action.payload,
+      };
+
     default:
       return globalState;
   }
